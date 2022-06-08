@@ -12,8 +12,8 @@ namespace mantis_tests.Tests.ProjectManagement
         {
             ProjectData project = new ProjectData()
             {
-                Name = GenerateRandomString(30),
-                Description = GenerateRandomString(100)
+                Name = RandomStringWithChars(15),
+                Description = RandomStringWithChars(100)
             };
 
             List<ProjectData> oldList = app.ProjectManagement.GetProjectList();

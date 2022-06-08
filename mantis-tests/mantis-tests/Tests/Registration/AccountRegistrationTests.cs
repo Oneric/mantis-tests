@@ -10,11 +10,13 @@ namespace mantis_tests.Tests.Registration
         [Test]
         public void RegisterNewAccountTest()
         {
+            string username = RandomStringWithChars(10);
+
             AccountData newAccount = new AccountData()
             {
-                Username = "Testuser12",
-                Email = "Testuser12@localhost.mbt",
-                RealName = "Testuser12",
+                Username = username,
+                Email = $"{ username }@localhost.mbt",
+                RealName = RandomStringWithChars(10),
                 Password = "12345678"
             };
             app.James.Delete(newAccount);

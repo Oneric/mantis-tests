@@ -24,9 +24,15 @@ namespace mantis_tests
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < l; i++)
             {
-                sb.Append(Convert.ToChar(32 + (Convert.ToInt32(random.NextDouble() * 65))));
+                sb.Append(Convert.ToChar(32 + (Convert.ToInt32(random.NextDouble() * 10))));
             }
             return sb.ToString();
+        }
+        public static string RandomStringWithChars(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }

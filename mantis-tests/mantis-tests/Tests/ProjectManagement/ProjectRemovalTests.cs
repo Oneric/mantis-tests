@@ -13,8 +13,8 @@ namespace mantis_tests.Tests.ProjectManagement
             if(app.ProjectManagement.GetProjectList().Count == 0)
             {
                 ProjectData project = new ProjectData() {
-                    Name = GenerateRandomString(30),
-                    Description = GenerateRandomString(300),
+                    Name = RandomStringWithChars(15),
+                    Description = RandomStringWithChars(100),
                 };
                 app.ProjectManagement.Create(project);
             }
