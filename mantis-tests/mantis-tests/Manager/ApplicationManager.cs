@@ -21,6 +21,7 @@ namespace mantis_tests
         protected MailerHelper mailerHelper;
         protected AuthHelper authHelper;
         protected ProjectManagementHelper projectManagementHelper;
+        protected ApiHelper apiHelper;
 
         private static readonly ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
@@ -36,6 +37,7 @@ namespace mantis_tests
             mailerHelper = new MailerHelper(this);
             authHelper = new AuthHelper(this);
             projectManagementHelper = new ProjectManagementHelper(this);
+            apiHelper = new ApiHelper(this);
 
         }
         ~ApplicationManager()
@@ -73,5 +75,6 @@ namespace mantis_tests
         public JamesHelper James { get { return jamesHelper; } }
         public MailerHelper Mailer { get { return mailerHelper; } }
         public ProjectManagementHelper ProjectManagement { get { return projectManagementHelper; } }
+        public ApiHelper Api { get { return apiHelper; } }
     }
 }
